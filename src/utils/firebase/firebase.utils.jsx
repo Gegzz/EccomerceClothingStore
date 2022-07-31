@@ -6,6 +6,7 @@ import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut
 } from "firebase/auth";
 
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
@@ -80,3 +81,6 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 };
 // if user data does not exist
 // create / set the document with the data from userauth in my collection
+
+
+export const signOutUser = async () => await signOut(auth)
